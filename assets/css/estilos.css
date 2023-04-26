@@ -1,0 +1,45 @@
+/* Tipos de selectores */
+
+/*
+selectores descendientes (se inicializan dejando un espacio, despues del ultimo selector
+selectores de id -> se inician utilizando el #
+selectores de clase -> se inician utilizando el .
+selectores de etiqueta -> se inician utilizando la etiqueta de html ej: (p, span, div, h1, table, tr, th, td)
+
+selector estándar o universal -> se inicializa usando el *
+selectores de atributos -> se inician colocando el atributo [href]
+selectores de pseudoelementos -> ::after ::before ::hover ::marker ::first-letter ::first-line ::placeholder ::shadow
+selectores hijos -> se inician utilizando el simbolo mayor que (>)
+*/
+
+
+/*
+unidades de medida en css
+% -> establece una unidad de medida en porcentaje
+px -> establece una unidad de medida en pixeles
+vh y vw -> establece una unidad de medida en base al tamaño de alto y ancho de la pantalla 
+em -> establece una unidad de medida basada en el elemento padre
+rem -> establece una unidad de medida basada en el elemento raiz
+
+*/
+
+/* .titulo h1 {
+    font-size: 40px;
+    color: #217ccc;
+} */
+
+.seccionTitulo {
+    padding: 20px; /* Espacio que incrementa desde el borde hacia el interior del elemento */
+    margin: 10px;  /* Espacio que incrementa desde el borde hacia el exterior del elemento */
+    border: 1px solid black;  /* Es una propiedad que permite establecer un borde, recibe como parametro, tamaño del borde, tipo del borde, color del borde*/
+    background: purple; /* Es una propiedad que se encarga de cambiar el color de fondo*/
+}
+
+.titulo h1 {
+    font-size: 40px;
+    color: #217ccc;
+}
+
+.subtitulo h2 {
+
+}
