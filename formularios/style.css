@@ -1,0 +1,113 @@
+.sidebar {
+    background: linear-gradient(to bottom, #b7c5d5, #d7e1f1);
+    color: #fff;
+    height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sidebar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: calc(100vh - 56px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .sidebar .nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .sidebar .nav-link i {
+    margin-right: 8px;
+  }
+  
+  .sidebar .nav
+  -link:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .sidebar .active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar .active .nav-link {
+    color: #fff;
+  }
+  
+  .main-content {
+    margin-left: 250px;
+  }
+  
+  @media (max-width: 991.98px) {
+    .sidebar {
+      margin-top: 56px;
+      position: fixed;
+      z-index: 1;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s;
+    }
+  
+    .sidebar.active {
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+  }
+  
+  .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .card-header h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .card-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .card-text {
+    font-size: 1.1rem;
+  }
+  
+  .table td,
+  .table th {
+    font-size: 1.1rem;
+  }
+  
+  .progress {
+    height: 20px;
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .progress-bar.bg-success {
+    background-color: #00a65a;
+  }
+  
+  .progress-bar.bg-danger {
+    background-color: #f56954;
+  }
+  
+  .progress-bar.bg-warning {
+    background-color: #f39c12;
+  }
+  
+  

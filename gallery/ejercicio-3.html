@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+
+    <style>
+        .gallery {
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.grid-item img {
+  width: 100%;
+}
+
+.slide.active {
+  display: block;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <div class="slide">
+          <div class="grid-container">
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 1"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 2"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 3"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 4"></div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="grid-container">
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 5"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 6"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 7"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400x400" alt="Imagen 8"></div>
+          </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+      </div>
+      
+      
+      <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName('slide');
+  const dots = document.getElementsByClassName('dot');
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('active');
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove('active');
+  }
+  slides[slideIndex-1].classList.add('active');
+  dots[slideIndex-1].classList.add('active');
+}
+
+
+      </script>
+    
+</body>
+</html>

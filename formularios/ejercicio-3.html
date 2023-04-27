@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(to bottom, #42a5f5, #1e88e5);
+}
+
+form {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #999;
+}
+
+form:first-of-type {
+  display: flex;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #eee;
+}
+
+textarea {
+  height: 120px;
+}
+button[type="submit"],
+button[type="button"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 20px 10px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #3e8e41;
+  transform: scale(1.05);
+}
+
+.previous-step {
+  background-color: #b71c1c;
+}
+
+.previous-step:hover {
+  background-color: #800;
+}
+
+.next-step {
+  margin-left: auto;
+  background-color: #357ae8;
+}
+
+.next-step:hover {
+  background-color: #0063b1;
+}
+
+
+#step1 .previous-step {
+  display: none;
+}
+
+#step3 button[type="submit"] {
+  background-color: #2196f3;
+}
+
+#step3 button[type="submit"]:hover {
+  background-color: #0d47a1;
+  transform: scale(1.05);
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #bbb;
+  flex: 1;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        <form id="step1">
+            
+          <h2>Paso 1</h2>
+          <label for="name">Nombre completo:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+          <button type="button" class="next-step">Siguiente</button>
+        </form>
+        <form id="step2">
+          <h2>Paso 2</h2>
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone" required>
+          <label for="address">Dirección:</label>
+          <input type="text" id="address" name="address" required>
+          <button type="button" class="previous-step">Anterior</button>
+          <button type="button" class="next-step">Siguiente</button>
+        </form>
+        <form id="step3">
+          <h2>Paso 3</h2>
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="button" class="previous-step">Anterior</button>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+
+      <script>
+        const forms = document.querySelectorAll('form');
+const prevBtns = document.querySelectorAll('.previous-step');
+const nextBtns = document.querySelectorAll('.next-step');
+const dots = document.querySelectorAll('.dot');
+
+let currentStep = 0;
+
+function showStep(step) {
+  forms.forEach(form => form.style.display = 'none');
+  forms[step].style.display = 'flex';
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[step].classList.add('active');
+}
+
+showStep(currentStep);
+
+prevBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentStep--;
+    showStep(currentStep);
+  });
+});
+
+nextBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentStep < forms.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    } else {
+      forms[currentStep].submit();
+    }
+  });
+});
+
+      </script>
+      
+</body>
+</html>

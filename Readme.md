@@ -90,7 +90,22 @@ Las clases son atributos que se agregan a los elementos HTML para identificarlos
 
 ### Selectores mas complejos
 
-- Selector de atributo ([atributo], [atributo=valor], [atributo^=valor], [atributo$=valor], [atributo*=valor]): selecciona elementos que tienen un atributo específico o un atributo específico con un valor específico o que comienza, termina o contiene un valor específico. 
+- Selector de atributo : 
+selecciona elementos que tienen un atributo específico
+Ej: [atributo]
+
+Un atributo específico con un valor específico 
+Ej: [atributo=valor]
+
+Que comienza
+Ej: [atributo^=valor]
+
+Que termina
+Ej: [atributo$=valor]
+
+Que contiene un valor específico
+Ej: [atributo*=valor]
+
 
 Ejemplo: 
 
